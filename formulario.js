@@ -1,9 +1,11 @@
-var formulario = document.querySelector("#form")
+//Se cambian comillas dobles por comillas simples y se edita el nombre de form
+var formulario = document.querySelector('.formulario');
+//Se cambia # por punto para queryselector 
 
-formulario.onsubmit = function(e) {
-
-  e.prevent();
-  
+//Se acomoda la función formularioonsubmit 
+function formularioonsubmit (event) {
+  event.preventDefault();
+  //Se añade un evento para la funcion
   var n = formulario.elements[0]
   var e = formulario.elements[1]
   var na = formulario.elements[2]
@@ -29,12 +31,12 @@ if (nombre.length > 0
   agregarInvitado(nombre, edad, nacionalidad)
   }
 }
-
-var botonBorrar = document.createElement("button")
-botonBorrar.textContent = "Eliminar invitado"
-botonBorrar.id = "boton-borrar"
-var corteLinea = document.createElement("br")
-document.body.appendChild(corteLinea)
+//Se añaden parentesis y puntos y coma necesarios
+var botonBorrar = document.createElement("button");
+botonBorrar.textContent = ("Eliminar invitado");
+botonBorrar.id = ("boton-borrar");
+var corteLinea = document.createElement("br");
+document.body.appendChild(corteLinea);
 document.body.appendChild(botonBorrar);
 
 function agregarInvitado(nombre, edad, nacionalidad) {
@@ -61,7 +63,7 @@ lista.appendChild(elementoLista)
 var spanNombre = document.createElement("span")
 var inputNombre = document.createElement("input")
 var espacio = document.createElement("br")
-spanNombre.textContent = "Nombre: "
+spanNombre.textContent = ("Nombre: ")
 inputNombre.value = nombre 
 elementoLista.appendChild(spanNombre)
 elementoLista.appendChild(inputNombre)
@@ -82,16 +84,16 @@ crearElemento("Nombre", nombre)
 crearElemento("Edad", edad)
 crearElemento("Nacionalidad", nacionalidad)
 
-
-var botonBorrar = document.createElement("button")
-botonBorrar.textContent = "Eliminar invitado"
-botonBorrar.id = "boton-borrar"
-var corteLinea = document.createElement("br")
-elementoLista.appendChild(corteLinea)
+//Se añaden parentesis y puntos y coma necesarios
+var botonBorrar = document.createElement("button");
+botonBorrar.textContent = ("Eliminar invitado");
+botonBorrar.id = ("boton-borrar");
+var corteLinea = document.createElement("br");
+elementoLista.appendChild(corteLinea);
 elementoLista.appendChild(botonBorrar);
 
  botonBorrar.onclick = function() {
-// this.parentNode.style.display = 'none';
+ this.parentNode.style.display = 'none';
 botonBorrar.parentNode.remove()
   }
 }
